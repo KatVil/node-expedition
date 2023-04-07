@@ -3,11 +3,11 @@ const {
   getAllRover,
   getRightDoc,
   getRightCaptain,
-  getAllEngineer,
+  getBestEngineer,
   getRightRocket,
 } = require('../src/functions');
-
-describe('Экспедиция на Марс', () => {
+//njnjnjk
+describe('Экспедиция на Луну', () => {
   describe('Отбор кандидатов', () => {
     let crew;
     beforeEach(() => {
@@ -27,11 +27,11 @@ describe('Экспедиция на Марс', () => {
     });
     it('позволяет выбрать самого опытного врача', () => {
       const bestDoctor = getRightDoc();
-      expect(bestDoctor).toEqual(crew[4]);
+      expect(bestDoctor).toEqual(crew[5]);
     });
     it('позволяет выбрать самого опытного бортмеханика', () => {
       const bestEngineer = getBestEngineer();
-      expect(bestEngineer).toEqual([crew[2], crew[6]]);
+      expect(bestEngineer).toEqual(crew[6]);
     });
   });
   describe('Отбор оборудования', () => {
@@ -45,13 +45,13 @@ describe('Экспедиция на Марс', () => {
         'Путник-3, марсоход, 8',
       ];
     });
-    it('Позволяет отобрать все марсоходы', () => {
+    it('Позволяет отобрать все луноходы', () => {
       const allRover = getAllRover();
-      expect(allRover).toEqual([equipment[0], equipment[3], equipment[4]]);
+      expect(allRover).toEqual([equipment[1], equipment[2]]);
     });
-    it('позволяет выбрать только те марсоходы, которые смогут прослужить больше 3 лет', () => {
+    it('позволяет выбрать только те луноходы, которые смогут прослужить больше 5 лет', () => {
       const rightRovers = getRightRovers();
-      expect(rightRovers).toEqual([equipment[3], equipment[4]]);
+      expect(rightRovers).toEqual([equipment[2]]);
     });
   });
   describe('Выбор ракеты', () => {

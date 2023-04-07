@@ -1,8 +1,8 @@
 const fs = require('fs');
 const PATH = './src';
-const crew = fs.readFileSync(PATH + '/crew.txt', 'utf-8').split('\n').map((el) => el.split(', '))
-const rovers = fs.readFileSync(PATH + '/equipment.txt', 'utf-8').split('\n').map((el) => el.split(', '))
-const rockets = fs.readFileSync(PATH + '/rockets.txt', 'utf-8').split('\n').map((el) => el.split(', '))
+const crew = fs.readFileSync(PATH + '/crew.txt', 'utf-8').split('\r\n').map((el) => el.split(', '))
+const rovers = fs.readFileSync(PATH + '/equipment.txt', 'utf-8').split('\r\n').map((el) => el.split(', '))
+const rockets = fs.readFileSync(PATH + '/rockets.txt', 'utf-8').split('\r\n').map((el) => el.split(', '))
 
 
 //позволяет выбрать самого опытного капитана

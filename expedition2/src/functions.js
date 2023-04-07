@@ -7,32 +7,30 @@ const rockets = fs.readFileSync(PATH + '/rockets.txt', 'utf-8').split('\n').map(
 
 //позволяет выбрать самого опытного капитана
 function getRightCaptain() {
-  //let mostExperiencedCrew = crew.filter((el) => el.includes('Капитан')).sort((a, b) => +b[3] - +a[3])
-  //return mostExperiencedCrew[0].join(', ')
-  const filtered = crew.filter(person => person[2] === 'Капитан')
-        .sort((a, b) => +b[3] - +a[3]).map(el => el.join(', '));
-  return filtered[0];
+  let mostExperiencedCrew = crew.filter((el) => el.includes('Капитан')).sort((a, b) => +b[3] - +a[3])
+  return mostExperiencedCrew[0].join(', ')
 }
 
-//позволяет выбрать самого опытного врача среди женщин
+//позволяет выбрать самого опытного врача среди всей команды
 function getRightDoc() {
-  let mostExperiencedCrew = crew.filter((el) => el.includes('ж') && el.includes('Врач')).sort((a, b) => +b[3] - +a[3]);
+  let mostExperiencedCrew = crew.filter((el) => el.includes('Врач')).sort((a, b) => +b[4] - +a[4]);
   return mostExperiencedCrew[0].join(', ');
 }
 
 //позволяет выбрать всех бортмехаников
 function getAllEngineer() {
-  return crew.filter((el) => el.includes('Бортмеханик')).map((el) => el.join(', '));
-}
+    let mostExperiencedCrew = crew.filter((el) => el.includes('Бортмеханик')).sort((a, b) => +b[4] - +a[4]);
+    return  mostExperiencedCrew[0].join(', ');
+  }
 
 //Позволяет отобрать все марсоходы
 function getAllRover(){
   return rovers.filter((el) => el.includes('марсоход')).map((el) => el.join(', '));
 }
 
-//позволяет выбрать только те марсоходы, которые смогут прослужить больше 3 лет
+//позволяет выбрать только те марсоходы, которые смогут прослужить больше 5 лет
 function getRightRovers(){
-  let time = 3;
+  let time = 5;
   return rovers.filter((el) => el.includes('марсоход') && el[2] > time).map((el) => el.join(', '));
 
 }

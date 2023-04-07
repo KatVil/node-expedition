@@ -1,0 +1,26 @@
+{
+  "name": "expedition2",
+  "version": "1.0.0",
+  "description": "exp2",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KatVil/node-expedition.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "katvil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KatVil/node-expedition/issues"
+  },
+  "homepage": "https://github.com/KatVil/node-expedition#readme",
+  "devDependencies": {
+    "eslint": "^8.37.0",
+    "jest": "^29.5.0"
+  }
+}

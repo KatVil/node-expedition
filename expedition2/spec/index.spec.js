@@ -6,7 +6,7 @@ const {
   getBestEngineer,
   getRightRocket,
 } = require('../src/functions');
-//njnjnjk
+
 describe('Экспедиция на Луну', () => {
   describe('Отбор кандидатов', () => {
     let crew;
